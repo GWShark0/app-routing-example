@@ -1,5 +1,5 @@
 {
-  "name": "rerouting",
+  "name": "app-routing-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
