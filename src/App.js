@@ -7,10 +7,11 @@ import {
 import { Box } from '@mui/system';
 import { useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import DashboardLayout from './components/DashboardLayout';
+import EditorLayout from './components/EditorLayout';
+import ExportLayout from './components/ExportLayout';
 
-import Navbar from './components/Navbar';
 import Page from './components/Page';
-import Sidebar from './components/Sidebar';
 import { getDesignTokens } from './theme';
 
 export default function App() {
@@ -23,13 +24,15 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ display: 'flex', height: '100vh' }}>
-        <Navbar />
-        <Sidebar />
         <Routes>
-          <Route path="/" element={<Page title="Home" />} />
-          <Route path="projects" element={<Page title="Projects" />} />
-          <Route path="templates" element={<Page title="Templates" />} />
-          <Route path="brands" element={<Page title="Brands" />} />
+          <Route path="/" element={<DashboardLayout />}>
+            <Route index element={<Page title="Home" />} />
+            <Route path="projects" element={<Page title="Projects" />} />
+            <Route path="templates" element={<Page title="Templates" />} />
+            <Route path="brands" element={<Page title="Brands" />} />
+          </Route>
+          <Route path="/edit" element={<EditorLayout />} />
+          <Route path="/export" element={<ExportLayout />} />
         </Routes>
       </Box>
     </ThemeProvider>

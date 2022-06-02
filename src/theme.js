@@ -8,4 +8,17 @@ export const getDesignTokens = (mode) => ({
       main: '#19857b',
     },
   },
+  components: {
+    MuiAppBar: {
+      defaultProps: {
+        position: 'fixed',
+        color: 'inherit',
+      },
+    },
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
+    },
+  },
 });
