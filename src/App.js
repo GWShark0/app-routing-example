@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  createTheme,
+  CssBaseline,
+  ThemeProvider,
+  useMediaQuery,
+} from '@mui/material';
+import { Box } from '@mui/system';
+import { useMemo } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import Navbar from './components/Navbar';
+import Page from './components/Page';
+import Sidebar from './components/Sidebar';
+import { getDesignTokens } from './theme';
+
+export default function App() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const mode = prefersDarkMode ? 'dark' : 'light';
+
+  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ display: 'flex', height: '100vh' }}>
+        <Navbar />
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Page title="Home" />} />
+          <Route path="projects" element={<Page title="Projects" />} />
+          <Route path="templates" element={<Page title="Templates" />} />
+          <Route path="brands" element={<Page title="Brands" />} />
+        </Routes>
+      </Box>
+    </ThemeProvider>
   );
 }
-
-export default App;
