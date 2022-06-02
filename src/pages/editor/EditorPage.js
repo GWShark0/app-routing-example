@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 
-import Stage from './Stage';
+import Stage from 'components/Stage';
 
-export default function Editor() {
+export default function EditorPage() {
   return (
     <Box
       sx={{

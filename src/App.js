@@ -1,17 +1,20 @@
 import {
   createTheme,
+  Box,
   CssBaseline,
   ThemeProvider,
   useMediaQuery,
 } from '@mui/material';
-import { Box } from '@mui/system';
 import { useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import DashboardLayout from './components/DashboardLayout';
-import EditorLayout from './components/EditorLayout';
-import ExportLayout from './components/ExportLayout';
 
-import Page from './components/Page';
+import DashboardLayout from 'pages/dashboard/DashboardLayout';
+import BrandsPage from 'pages/dashboard/pages/BrandsPage';
+import HomePage from 'pages/dashboard/pages/HomePage';
+import ProjectsPage from 'pages/dashboard/pages/ProjectsPage';
+import TemplatesPage from 'pages/dashboard/pages/TemplatesPage';
+import EditorLayout from 'pages/editor/EditorLayout';
+import ExportLayout from 'pages/export/ExportLayout';
 import { getDesignTokens } from './theme';
 
 export default function App() {
@@ -26,10 +29,10 @@ export default function App() {
       <Box sx={{ display: 'flex', height: '100vh' }}>
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
-            <Route index element={<Page title="Home" />} />
-            <Route path="projects" element={<Page title="Projects" />} />
-            <Route path="templates" element={<Page title="Templates" />} />
-            <Route path="brands" element={<Page title="Brands" />} />
+            <Route index element={<HomePage />} />
+            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="templates" element={<TemplatesPage />} />
+            <Route path="brands" element={<BrandsPage />} />
           </Route>
           <Route path="/edit" element={<EditorLayout />} />
           <Route path="/export" element={<ExportLayout />} />

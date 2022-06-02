@@ -1,9 +1,9 @@
 import { AppBar, Box, Button, Toolbar } from '@mui/material';
-import { Link } from 'react-router-dom';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { Link } from 'react-router-dom';
 
-import Logo from './Logo';
-import NavbarMenu from './NavbarMenu';
+import Logo from 'components/Logo';
+import NavbarMenu from 'components/NavbarMenu';
 
 export default function ExportNavbar() {
   return (

@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 
-import Editor from './Editor';
 import EditorNavbar from './EditorNavbar';
+import EditorPage from './EditorPage';
 
 export default function EditorLayout() {
   return (
@@ -14,7 +14,7 @@ export default function EditorLayout() {
       }}
     >
       <EditorNavbar />
-      <Editor />
+      <EditorPage />
     </Box>
   );
 }

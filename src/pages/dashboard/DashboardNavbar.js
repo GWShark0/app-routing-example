@@ -1,7 +1,7 @@
 import { AppBar, Box, Toolbar } from '@mui/material';
 
-import Logo from './Logo';
-import NavbarMenu from './NavbarMenu';
+import Logo from 'components/Logo';
+import NavbarMenu from 'components/NavbarMenu';
 
 export default function DashboardNavbar() {
   return (

@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
-import Export from './Export';
+
 import ExportNavbar from './ExportNavbar';
+import ExportPage from './ExportPage';
 
 export default function ExportLayout() {
   return (
@@ -13,7 +14,7 @@ export default function ExportLayout() {
       }}
     >
       <ExportNavbar />
-      <Export />
+      <ExportPage />
     </Box>
   );
 }

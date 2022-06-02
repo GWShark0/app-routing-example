@@ -1,11 +1,10 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
-export default function Page({ title }) {
+import DashboardPageLayout from '../DashboardPageLayout';
+
+export default function HomePage() {
   return (
-    <Box component="main" sx={{ p: 4 }}>
-      <Typography component="h1" variant="h3" gutterBottom>
-        {title}
-      </Typography>
+    <DashboardPageLayout title="Home">
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
@@ -34,6 +33,6 @@ export default function Page({ title }) {
         maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
         aliquam ultrices sagittis orci a.
       </Typography>
-    </Box>
+    </DashboardPageLayout>
   );
 }

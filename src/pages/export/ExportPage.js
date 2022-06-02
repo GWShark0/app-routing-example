@@ -1,8 +1,8 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 
-import Stage from './Stage';
+import Stage from 'components/Stage';
 
-export default function Export() {
+export default function ExportPage() {
   return (
     <Box
       sx={{
